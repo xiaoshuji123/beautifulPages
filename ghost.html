@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: flex;
+        height: 100vh;
+        background-color: #00034b;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ghost {
+        position: relative;
+        width: 9.375rem;
+        height: 225px;
+        background-color: #fff;
+        box-shadow: -17px 0px 0px #dbdbdb inset, 0 0 50px #5939db;
+        border-radius: 100px 100px 0 0;
+        animation: float 2s infinite;
+    }
+
+    .ghost_eyes {
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        padding: 70px 0 0;
+        width: 90px;
+        height: 20px;
+    }
+
+    .ghost_eyes:before,
+    .ghost_eyes:after {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 25px;
+        background: #00034b;
+        border-radius: 50%;
+    }
+
+    .ghost_dimples {
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        padding: 35px 0 0;
+        width: 130px;
+        height: 20px;
+    }
+
+    .ghost_dimples:before,
+    .ghost_dimples:after {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        background: #ffbeff;
+        border-radius: 50%;
+    }
+
+    .ghost_feet {
+        width: 100%;
+        position: absolute;
+        bottom: -13px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ghost__feet-foot {
+        width: 25%;
+        background-color: #fff;
+        height: 26px;
+        border-radius: 50%;
+    }
+
+    ghost__feet-foot:last-child {
+        background-image: linear-gradient(to right, #fff 55%, #dbdbdb 45%);
+
+    }
+
+    .shadow {
+        background-color: #000232;
+        width: 150px;
+        height: 40px;
+        margin-top: 50px;
+        border-radius: 50%;
+        animation: shadow 2s infinite;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    @keyframes shadow {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(0.9);
+        }
+    }
+
+
+    /* Tooltips */
+    /* .tooltip {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        padding: 0.4rem 0.6rem;
+        border-radius: 40px;
+        font-size: 0.4rem;
+        font-weight: bold;
+        opacity: 0;
+        pointer-events: none;
+        text-transform: uppercase;
+        transform: translate(-50%, -100%);
+        transition: all 0.3s ease;
+        z-index: 1;
+    } */
+
+    /* .tooltip:after {
+        display: block;
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        width: 0;
+        height: 0;
+        content: "";
+        border: solid;
+        border-width: 10px 10px 0 10px;
+        border-color: transparent;
+        transform: translate(-50%, 100%);
+    } */
+</style>
+
+<body>
+    <div class="container">
+        <div class="container_elements">
+            <div class="ghost">
+                <div class="ghost_eyes"></div>
+                <div class="ghost_dimples"></div>
+                <div class="ghost_feet">
+                    <div class="ghost__feet-foot"></div>
+                    <div class="ghost__feet-foot"></div>
+                    <div class="ghost__feet-foot"></div>
+                    <div class="ghost__feet-foot"></div>
+                </div>
+            </div>
+            <div class="shadow"></div>
+        </div>
+    </div>
+</body>
+
+</html>
